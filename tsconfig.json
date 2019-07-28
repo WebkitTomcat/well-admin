@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin",
+        "configFile": "./tslint.json",
+      }
+    ],
     "target": "esnext",
     "module": "esnext",
     "strict": true,

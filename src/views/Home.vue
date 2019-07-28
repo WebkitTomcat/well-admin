@@ -1,18 +1,22 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <input type="text" v-model="loginFormData.email">
+    <input type="text" v-model="loginFormData.pwd">
+    <button @click="userLogin">登陆</button>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
+import { userLogin, userReg } from '@/api'
 
-@Component({
-  components: {
-    HelloWorld
+@Component
+export default class Home extends Vue {
+  loginFormData = { email: '576570555@qq.com', pwd: '123456as789' }
+  async userLogin () {
+    const { loginFormData } = this
+    if (!loginFormData.email || !loginFormData.pwd) return this.$notify.error({ title: '错误!', message: '请完整填写信息！' })
+    const res = await userReg(loginFormData)
   }
-})
-export default class Home extends Vue {}
+}
 </script>

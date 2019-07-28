@@ -1,0 +1,13 @@
+{
+  "defaultSeverity": "warning",
+  "extends": [
+    "tslint-config-standard"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**"
+    ]
+  },
+  "rules": {
+  }
+}
