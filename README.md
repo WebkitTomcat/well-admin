@@ -12,7 +12,7 @@
  + 对于还不太了解 TypeScript 的同学可以通过这里学习[TypeScript](https://www.tslang.cn/docs/handbook/typescript-in-5-minutes.html) 
 
 ### 初始化项目并改造
-#### 直接利用官方vue-cli初始化项目这里就不做演示了,不会的同学点这里 [vue-cli初始化项目官方文档]()
+#### 直接利用官方vue-cli初始化项目这里就不做演示了,不会的同学点这里 [Vue官方文档](https://cn.vuejs.org/)
 
 ### 略微对项目的目录进行改造
 
