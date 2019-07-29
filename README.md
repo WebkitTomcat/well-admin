@@ -114,7 +114,7 @@ const axiosConfig: AxiosRequestConfig = {
   // 请求后的数据处理
   transformResponse: [(data: AxiosResponse<AxiosRes>) => data],
   // 查询对象序列化函数
-  paramsSerializer: (params: CommonDict) => qs.stringify(params),
+  paramsSerializer: (params: DictType) => qs.stringify(params),
   // 超时设置s
   timeout: 30000,
   // 跨域是否带Token
@@ -181,19 +181,19 @@ instance.interceptors.response.use(
   }
 )
 
-function get (url: string, params?: CommonDict) {
+function get (url: string, params?: DictType) {
   return request({
     url, params, method: 'GET'
   })
 }
 
-function post (url: string, data?: CommonDict) {
+function post (url: string, data?: DictType) {
   return request({
     url, data, method: 'POST'
   })
 }
 
-function blob (url: string, params: CommonDict) {
+function blob (url: string, params: DictType) {
   return request({
     url, params, method: 'GET', responseType: 'blob'
   })
@@ -219,7 +219,7 @@ export { get, post, blob }
 #### api-config.ts 文件
 
 ```typescript
-const API_CONFIG: CommonDict = {
+const API_CONFIG: DictType = {
   user_login: '/api/user/login',          // 用户登陆
   user_reg: '/api/user/reg'               // 用户注册
 }
@@ -232,9 +232,9 @@ export default API_CONFIG
 import request, { get, post } from './request'
 import API_CONFIG from './api-config'
 
-export const userLogin = (params: CommonDict) => post(API_CONFIG.user_login, params)
+export const userLogin = (params: DictType) => post(API_CONFIG.user_login, params)
 
-export const userReg = (params: CommonDict) => post(API_CONFIG.user_reg, params)
+export const userReg = (params: DictType) => post(API_CONFIG.user_reg, params)
 ```
 
 ### 更多详细内容再进行完善
