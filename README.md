@@ -60,7 +60,7 @@ npm install typescript-tslint-plugin --save-dev
 npm install tslint-config-standard --save-dev
 ```
 + tslint.json 配置文件, 只需配置继承tslint-config-standard的配置即可，当然也可以在下面的配置中自定义修改
-```json
+```javascript
 {
   "defaultSeverity": "warning",
   "extends": [
@@ -76,7 +76,7 @@ npm install tslint-config-standard --save-dev
 }
 ```
 + 在tscconfig.json中注入tslint插件
-```json
+```javascript
 {
   "compilerOptions": {
     "plugins": [
