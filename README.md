@@ -12,35 +12,36 @@
  + 对于还不太了解 TypeScript 的同学可以通过这里学习[TypeScript](https://www.tslang.cn/docs/handbook/typescript-in-5-minutes.html) 
 
 ### 初始化项目并改造
-#### 直接利用官方vue-cli初始化项目这里就不做演示了,不会的同学点这里 [Vue官方文档](https://cn.vuejs.org/)
++ 直接利用官方vue-cli初始化项目这里就不做演示了,不会的同学点这里 [Vue官方文档](https://cn.vuejs.org/)
 
-### 略微对项目的目录进行改造
+### 改造后目录结构如下
 
 ```TOC
 ├── public                          // 静态页面
 ├── scripts                         // 相关脚本配置
-├── src                             // 主目录
+├── src                             // 主目录(开发者写的代码基本都在这里)
     ├── api                         // axios请求封装 
-    ├── assets                      // 静态资源
+    ├── assets                      // 静态资源, svg-icon 图标等
     ├── filters                     // 全局过滤器
     ├── lib                         // 全局插件
     ├── router                      // 路由配置
     ├── store                       // vuex 配置
     ├── scss                        // 样式scss文件
-    ├── types                       // 全局注入
-    ├── utils                       // 工具方法(axios封装，全局方法等)
+    ├── types                       // .d.ts 文件全局注入
+    ├── utils                       // 工具方法封装，全局方法等
     ├── views                       // 页面问价目录
     ├── App.vue                     // 页面主入口
     ├── main.ts                     // 项目主入口
     ├── registerServiceWorker.ts    // PWA 配置
 ├── tests                           // 测试用例
 ├── .editorconfig                   // 编辑相关配置
-├── .env.development                // dev环境变量 
-├── .env.production                 // production环境变量 
+├── .env.development                // 开发环境环境变量 
+├── .env.production                 // 生产环境环境变量 
 ├── .npmrc                          // npm 源配置
 ├── .postcssrc.js                   // postcss 配置
 ├── babel.config.js                 // preset 记录
 ├── cypress.json                    // e2e plugins
+├── deploy.sh                       // 快速部署shell脚本命令
 ├── f2eci.json                      // 部署相关配置
 ├── package.json                    // 依赖
 ├── README.md                       // 项目 readme
@@ -50,10 +51,9 @@
 ```
 
 ### tslint 配置
-+ [typescript-tslint-plugin](https://github.com/Microsoft/typescript-tslint-plugin)
-+ typescript-tslint-plugin插件下载
++ [typescript-tslint-plugin](https://github.com/Microsoft/typescript-tslint-plugin) 插件下载
 ```javascript
-npm install typescript-tslint-plugin
+npm install typescript-tslint-plugin --save-dev
 ```
 + 我这里的tslint直接引用一份官方标准[tslint-config-standard](https://standardjs.com/rules.html), 下载标准
 ```javascript
