@@ -39,19 +39,19 @@ instance.interceptors.response.use(
   }
 )
 
-function get (url: string, params?: DictType) {
+function get (url: string, params?: Dictionary) {
   return request({
     url, params, method: 'GET'
   })
 }
 
-function post (url: string, data?: DictType) {
+function post (url: string, data?: Dictionary) {
   return request({
     url, data, method: 'POST'
   })
 }
 
-function blob (url: string, params: DictType) {
+function blob (url: string, params: Dictionary) {
   return request({
     url, params, method: 'GET', responseType: 'blob'
   })

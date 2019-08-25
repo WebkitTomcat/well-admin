@@ -60,7 +60,7 @@ npm install typescript-tslint-plugin --save-dev
 npm install tslint-config-standard --save-dev
 ```
 + tslint.json 配置文件, 只需配置继承tslint-config-standard的配置即可，当然也可以在下面的配置中自定义修改
-```json
+```javascript
 {
   "defaultSeverity": "warning",
   "extends": [
@@ -76,7 +76,7 @@ npm install tslint-config-standard --save-dev
 }
 ```
 + 在tscconfig.json中注入tslint插件
-```json
+```javascript
 {
   "compilerOptions": {
     "plugins": [
@@ -114,7 +114,7 @@ const axiosConfig: AxiosRequestConfig = {
   // 请求后的数据处理
   transformResponse: [(data: AxiosResponse<AxiosRes>) => data],
   // 查询对象序列化函数
-  paramsSerializer: (params: DictType) => qs.stringify(params),
+  paramsSerializer: (params: Dictionary) => qs.stringify(params),
   // 超时设置s
   timeout: 30000,
   // 跨域是否带Token
@@ -181,19 +181,19 @@ instance.interceptors.response.use(
   }
 )
 
-function get (url: string, params?: DictType) {
+function get (url: string, params?: Dictionary) {
   return request({
     url, params, method: 'GET'
   })
 }
 
-function post (url: string, data?: DictType) {
+function post (url: string, data?: Dictionary) {
   return request({
     url, data, method: 'POST'
   })
 }
 
-function blob (url: string, params: DictType) {
+function blob (url: string, params: Dictionary) {
   return request({
     url, params, method: 'GET', responseType: 'blob'
   })
@@ -219,7 +219,7 @@ export { get, post, blob }
 #### api-config.ts 文件
 
 ```typescript
-const API_CONFIG: DictType = {
+const API_CONFIG: Dictionary = {
   user_login: '/api/user/login',          // 用户登陆
   user_reg: '/api/user/reg'               // 用户注册
 }
@@ -232,9 +232,9 @@ export default API_CONFIG
 import request, { get, post } from './request'
 import API_CONFIG from './api-config'
 
-export const userLogin = (params: DictType) => post(API_CONFIG.user_login, params)
+export const userLogin = (params: Dictionary) => post(API_CONFIG.user_login, params)
 
-export const userReg = (params: DictType) => post(API_CONFIG.user_reg, params)
+export const userReg = (params: Dictionary) => post(API_CONFIG.user_reg, params)
 ```
 
 ### 更多详细内容再进行完善
