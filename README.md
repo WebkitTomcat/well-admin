@@ -1,4 +1,4 @@
-### 详细介绍请移步 【wiki介绍文档](https://github.com/WebkitTomcat/well-admin/wiki)
+### 详细介绍请移步 [wiki介绍文档](https://github.com/WebkitTomcat/well-admin/wiki)
 
 ## 安装npm依赖
 ```
