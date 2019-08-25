@@ -5,9 +5,18 @@
   ],
   "linterOptions": {
     "exclude": [
-      "node_modules/**"
+      "node_modules/**",
+      "**/assets/**"
     ]
   },
   "rules": {
+    "variable-name": [ true,
+      "ban-keywords", // 不允许使用特定的ts关键字当做变量或者参数名。	黑名单: any, Number, number, String, string, Boolean, boolean, Undefined, undefined
+      // 'check-format', //只允许小驼峰或者UPPER_CASED形式的变量名
+      "allow-pascal-case", //除了小驼峰还允许PascalCase帕斯卡命名（除了类名接口名这些，不知道在哪里还需要PascalCase命名。。。）
+      "allow-leading-underscore", // 允许开头的下划线，例如 _test
+      "allow-trailing-underscore", // 允许结尾的下划线，例如 `test_`
+      "allow-snake-case" // 允许蛇形写法， test_1，  TEST_1
+    ]
   }
 }

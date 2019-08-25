@@ -8,7 +8,7 @@ const axiosConfig: AxiosRequestConfig = {
   // 请求后的数据处理
   transformResponse: [(data: AxiosResponse<AxiosRes>) => data],
   // 查询对象序列化函数
-  paramsSerializer: (params: DictType) => qs.stringify(params),
+  paramsSerializer: (params: Dictionary) => qs.stringify(params),
   // 超时设置s
   timeout: 30000,
   // 跨域是否带Token
